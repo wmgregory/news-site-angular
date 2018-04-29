@@ -19,19 +19,17 @@ export class SearchComponent implements OnInit {
   addKeyword(): void {
     const trimmed = this.keyword.trim();
 
-    console.log(trimmed);
-
     if (trimmed) {
       this.keywords.push(trimmed);
 
-      this.search.emit(this.keywords.toString());
+      this.search.emit(this.keywords);
       this.keyword = '';
     }
   }
 
   removeKeyword(keyword: string): void {
     this.keywords = this.keywords.filter((item) => item !== keyword);
-    this.search.emit(this.keywords.toString());
+    this.search.emit(this.keywords);
   }
 
   clear(): void {

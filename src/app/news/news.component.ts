@@ -24,7 +24,7 @@ export class NewsComponent implements OnInit {
     return this.newsService.getArticles();
   }
 
-  searchKeywords(keywords?: string): void {
+  searchKeywords(keywords?: string[]): void {
     this.articles$ = this.newsService.getArticles(keywords);
   }
 }

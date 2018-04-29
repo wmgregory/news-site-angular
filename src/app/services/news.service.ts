@@ -19,18 +19,23 @@ export class NewsService {
 
   constructor(private http: HttpClient) {}
 
-
-  private createUrl = (keywords: string) => {
-    const query = keywords ? `&q=${keywords}` : '';
-    return `${this.url}?apiKey=${this.key}&country=${this.country}${query}`;
-  }
-
-
   // @todo add catcher
-  getArticles(keywords?: string): Observable<Article[]> {
+  getArticles(keywords?: string[]): Observable<Article[]> {
     return this.http.get(this.createUrl(keywords))
       .pipe(
         map((news: News) => <Article[]>news.articles),
       );
+  }
+
+
+  private createUrl = (keywords: string[]) => {
+    const query = this.createQuery(keywords);
+
+
+    return `${this.url}?apiKey=${this.key}&country=${this.country}${query}`;
+  }
+
+  private createQuery(keywords: string[]): string {
+    return keywords ? `&q=${keywords.join(' ')}` : '';
   }
 }
