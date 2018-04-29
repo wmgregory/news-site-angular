@@ -22,11 +22,11 @@ export class NewsService {
 
   private createUrl = () => {
     return `${this.url}?apiKey=${this.key}&country=${this.country}`;
-  }
+  };
 
 
   // @todo add catcher
-  getArticles (): Observable<Article[]> {
+  getArticles(): Observable<Article[]> {
     return this.http.get(this.createUrl())
       .pipe(
         map((news: News) => <Article[]>news.articles),
