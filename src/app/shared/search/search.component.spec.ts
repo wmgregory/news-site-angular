@@ -25,4 +25,6 @@ describe('SearchComponent', () => {
     expect(component).toBeTruthy();
     expect(fixture).toMatchSnapshot();
   });
+
+
 });

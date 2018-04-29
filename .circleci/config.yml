@@ -1,0 +1,22 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: node:9.2
+    steps:
+      - checkout
+      - run:
+          name: Create cache lock file
+          command: cat package.json yarn.lock | grep -v version  > cache.lock
+      - restore_cache:
+          key: node92--{{ arch }}--{{ checksum "cache.lock" }}
+      - run:
+          name: Install node dependencies
+          command: if [ ! -d "node_modules" ]; then yarn; fi
+      - save_cache:
+          key: node92--{{ arch }}--{{ checksum "cache.lock" }}
+          paths:
+            - node_modules
+      - run:
+          name: Unit tests
+          command: yarn test:ci --coverage

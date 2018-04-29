@@ -8,7 +8,7 @@
     "build": "ng build --prod",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:ci": "jest --runInBand",
+    "test:ci": "node --harmony_proxies node_modules/.bin/jest --runInBand --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
@@ -26,6 +26,7 @@
     "@ng-bootstrap/ng-bootstrap": "^1.1.2",
     "bootstrap": "^4.1.0",
     "core-js": "^2.4.1",
+    "coveralls": "^3.0.0",
     "newsapi": "^2.2.2",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"
