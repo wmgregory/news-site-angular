@@ -9,12 +9,26 @@ This project is using:
 
 ## Getting started
 
-## Install your dependencies    
+You will need an API key from here: https://newsapi.org/register
+
+You will need to insert your own key here:
+
+```
+/src/environments/environment.ts
+export const environment = {
+  production: false,
+  news_key: '{YOUR_KEY}'
+};
+
+```
+
+
+## Install your dependencies
 ```
 yarn
 ```
 
-## Serve the app    
+## Serve the app
 ```
 yarn serve
 ```

@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  news_key: '104d56363221426685543ed0441f8b67'
+  news_key: '{YOUR_KEY}'
 };
