@@ -12,12 +12,12 @@ import { NewsService } from '../services/news.service';
 })
 export class NewsComponent implements OnInit {
 
-  public articles: Observable<Article[]>;
+  public articles$: Observable<Article[]>;
 
   constructor(private newsService: NewsService) {}
 
   ngOnInit() {
-    this.articles = this.getArticles();
+    this.articles$ = this.getArticles();
   }
 
   getArticles(): Observable<Article[]> {

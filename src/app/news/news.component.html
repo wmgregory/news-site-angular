@@ -5,7 +5,7 @@
 
     <div class="card-columns">
 
-      <div class="card" *ngFor="let article of (articles | async)">
+      <div class="card" *ngFor="let article of (articles$ | async)">
         <img class="card-img-top" *ngIf="article.urlToImage" [src]="article.urlToImage" [alt]="article.title" />
 
         <div class="card-body">

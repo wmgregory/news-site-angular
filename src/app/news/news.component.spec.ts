@@ -12,8 +12,7 @@ describe('NewsComponent', () => {
   let component: NewsComponent;
   let fixture: ComponentFixture<NewsComponent>;
 
-  const getArticlesData = {
-    articles: [
+  const articlesMock = [
       {
         'source': {'id': 'techcrunch', 'name': 'TechCrunch'},
         'author': 'Jon Evans',
@@ -23,19 +22,18 @@ describe('NewsComponent', () => {
         'urlToImage': 'https://techcrunch.com/wp-content/uploads/2018/04/shoe-diversity.jpg?w=764',
         'publishedAt': '2018-04-29T13:00:12Z'
       }
-    ],
-  };
+  ];
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ NewsComponent ],
       providers: [
-        { provide: NewsService, useClass: newsServiceMock },
+        { provide: NewsService, useValue: newsServiceMock },
       ],
     })
     .compileComponents();
 
-    jest.spyOn(newsServiceMock, 'getArticles').mockReturnValue(Observable.of(getArticlesData));
+    jest.spyOn(newsServiceMock, 'getArticles').mockReturnValue(Observable.of(articlesMock));
 
   }));
 
@@ -49,9 +47,11 @@ describe('NewsComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+    expect(fixture).toMatchSnapshot();
   });
 
-  it('should contain an article', () => {
-    expect(component.articles).toEqual(getArticlesData.articles);
+  it('should contain an article', async () => {
+    const articles = await component.articles$;
+    expect(articles.value).toEqual(articlesMock);
   });
 });

@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NewsComponent should create 1`] = `
+<app-news
+  articles$={[Function ScalarObservable]}
+  newsService={[Function Object]}
+>
+  <h2>
+    News
+  </h2>
+  
+  <div
+    class="container-fluid"
+  >
+    
+    
+    <div
+      class="row"
+    >
+      
+  
+      
+      <div
+        class="card-columns"
+      >
+        
+  
+        
+        
+        <div
+          class="card"
+        >
+          
+          
+          
+          <img
+            alt="Giving up on 'diversity and inclusion'"
+            class="card-img-top"
+            src="https://techcrunch.com/wp-content/uploads/2018/04/shoe-diversity.jpg?w=764"
+          />
+          
+  
+          
+          <div
+            class="card-body"
+          >
+            
+            
+            <h5
+              class="card-title"
+            >
+              Giving up on 'diversity and inclusion'
+            </h5>
+            
+            
+            <p
+              class="card-text"
+            >
+              I went to see Arlan Hamilton of Backstage Capital speak this week. Her remarkable story is pretty well known by now…
+            </p>
+            
+            
+            <a
+              class="btn btn-primary"
+              href="https://techcrunch.com/2018/04/29/giving-up-on-diversity-and-inclusion/"
+            >
+              Go somewhere
+            </a>
+            
+          
+          </div>
+          
+        
+        </div>
+        
+  
+      
+      </div>
+      
+  
+    
+    </div>
+    
+  
+  </div>
+  
+</app-news>
+`;
