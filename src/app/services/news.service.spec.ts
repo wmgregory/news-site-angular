@@ -48,4 +48,11 @@ describe('NewsService', () => {
       expect(articles.length).toBeGreaterThan(0);
     });
   });
+
+  it('should search articles', () => {
+    service.getArticles(['news']).subscribe((articles) => {
+      expect(httpMock.get).toHaveBeenCalled();
+      expect(articles.length).toBeGreaterThan(0);
+    });
+  });
 });

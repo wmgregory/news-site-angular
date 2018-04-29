@@ -56,4 +56,16 @@ describe('NewsComponent', () => {
     const articles = await component.articles$;
     expect(articles.value).toEqual(articlesMock);
   });
+
+  it('should search articles', async () => {
+    const keywords = ['news'];
+    const newArticlesMock = [...articlesMock, ...articlesMock];
+    jest.spyOn(newsServiceMock, 'getArticles').mockReturnValue(Observable.of(newArticlesMock));
+
+    component.searchArticles(keywords);
+    const articles = await component.articles$;
+
+    expect(newsServiceMock.getArticles).toHaveBeenCalledWith(keywords);
+    expect(articles.value).toEqual(newArticlesMock);
+  });
 });
