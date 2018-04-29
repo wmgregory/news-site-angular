@@ -24,3 +24,10 @@ yarn serve
 yarn test
 yarn test:watch          // runs and watches
 ```
+
+## TODO:
+- Add Angular Universal
+- Add dates, and other missing fields
+- Make News items open in a new page
+- Install and add Cyress tests
+- Error handling
