@@ -16,7 +16,7 @@ import { SearchComponent } from './shared/search/search.component';
   declarations: [
     AppComponent,
     NewsComponent,
-    SearchComponent
+    SearchComponent,
   ],
   imports: [
     BrowserModule,

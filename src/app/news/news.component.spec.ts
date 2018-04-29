@@ -1,3 +1,4 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Observable } from 'rxjs/Observable';
@@ -30,6 +31,7 @@ describe('NewsComponent', () => {
       providers: [
         { provide: NewsService, useValue: newsServiceMock },
       ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
     })
     .compileComponents();
 

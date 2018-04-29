@@ -18,6 +18,18 @@ exports[`NewsComponent should create 1`] = `
       class="row"
     >
       
+      
+      <app-search />
+      
+    
+    </div>
+    
+  
+    
+    <div
+      class="row"
+    >
+      
   
       
       <div
