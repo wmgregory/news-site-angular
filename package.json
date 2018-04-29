@@ -34,6 +34,10 @@
   "jest": {
     "preset": "jest-preset-angular",
     "setupTestFrameworkScriptFile": "<rootDir>/config/jest/setupJest.ts",
+    "coveragePathIgnorePatterns": [
+      "/config/",
+      "/node_modules/"
+    ],
     "collectCoverage": true
   },
   "devDependencies": {
