@@ -20,14 +20,15 @@ export class NewsService {
   constructor(private http: HttpClient) {}
 
 
-  private createUrl = () => {
-    return `${this.url}?apiKey=${this.key}&country=${this.country}`;
-  };
+  private createUrl = (keywords: string) => {
+    const query = keywords ? `&q=${keywords}` : '';
+    return `${this.url}?apiKey=${this.key}&country=${this.country}${query}`;
+  }
 
 
   // @todo add catcher
-  getArticles(): Observable<Article[]> {
-    return this.http.get(this.createUrl())
+  getArticles(keywords?: string): Observable<Article[]> {
+    return this.http.get(this.createUrl(keywords))
       .pipe(
         map((news: News) => <Article[]>news.articles),
       );

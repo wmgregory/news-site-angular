@@ -1,0 +1,26 @@
+<div id="search-component">
+
+  <div class="form-inline">
+    <div class="form-group mb-2">
+      <h4>News Search</h4>
+    </div>
+
+    <div class="form-group mx-sm-3 mb-2">
+      <label for="search" class="sr-only">Password</label>
+      <input class="form-control" type="text" id="search"
+             #search
+             [(ngModel)]="keyword"
+             (keyup.enter)="addKeyword()"
+             placeholder="type here...." />
+    </div>
+
+    <button class="btn btn-primary mb-2" type="button" (click)="addKeyword()">search</button>
+    <button class="btn btn-primary mb-2" type="button" (click)="clear()">clear</button>
+  </div>
+
+  <h5>Keywords</h5>
+  <ul class="search-keywords">
+    <li *ngFor="let keyword of keywords">
+      <button type="button" class="btn btn-light" (click)="removeKeyword(keyword)">{{ keyword }} x</button></li>
+  </ul>
+</div>
