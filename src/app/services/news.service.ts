@@ -6,6 +6,7 @@ import { map } from 'rxjs/operators';
 
 import { environment } from '../../environments/environment';
 
+import { News } from '../models/News.model';
 import { Article } from '../models/Article.model';
 
 @Injectable()
@@ -26,9 +27,9 @@ export class NewsService {
 
   // @todo add catcher
   getArticles (): Observable<Article[]> {
-    return this.http.get<Article[]>(this.createUrl())
+    return this.http.get(this.createUrl())
       .pipe(
-        map((news) => news.articles),
+        map((news: News) => <Article[]>news.articles),
       );
   }
 }
