@@ -8,7 +8,7 @@
     "build": "ng build --prod",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:ci": "node --harmony_proxies node_modules/.bin/jest --runInBand --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "test:ci": "node --harmony node_modules/.bin/jest --runInBand --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
