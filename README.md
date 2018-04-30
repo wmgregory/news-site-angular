@@ -1,6 +1,7 @@
 # NewsSiteAngular
 
 [![Coverage Status](https://coveralls.io/repos/github/wmgregory/news-site-angular/badge.svg?branch=master&service=github)](https://coveralls.io/github/wmgregory/news-site-angular?branch=master)
+[![Known Vulnerabilities](https://snyk.io/test/github/wmgregory/news-site-angular/badge.svg?targetFile=package.json)](https://snyk.io/test/github/wmgregory/news-site-angular?targetFile=package.json)
 [![CircleCI](https://circleci.com/gh/wmgregory/news-site-angular.svg?style=svg)](https://circleci.com/gh/wmgregory/news-site-angular)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
